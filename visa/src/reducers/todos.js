@@ -19,26 +19,29 @@ export default function todos(state = {
 }, action) {
   switch (action.type) {
     case 'ADDED_TODO':
-      return Object.assign({}, state, {
-        isPosting: false,
-        items: state.items.concat([{ text: action.text, done: false }])
-      })
+      return {
+          ...state,
+          isPosting: false,
+          items: state.items.concat([{ text: action.text, done: false }])
+      }
     case 'ADDING_TODO':
-      return Object.assign({}, state, {
-        isPosting: true
-      })
+      return {
+          ...state,
+          isPosting: true
+      }
     case 'TOGGLE_TODO':
-      return Object.assign({}, state, {
-        items: state.items.map((todo, i) => {
-          if (i === action.index) {
-            return {
-              text: todo.text,
-              done: !todo.done
+      return {
+          ...state,
+          items: state.items.map((todo, i) => {
+            if (i === action.index) {
+              return {
+                text: todo.text,
+                done: !todo.done
+              }
             }
-          }
-          return todo
-        })
-      })
+            return todo
+          })
+      }
     default:
       return state
   }

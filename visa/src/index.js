@@ -7,8 +7,14 @@ Vue.use(VueRouter)
 const router = new VueRouter()
 
 router.map({
-  '/': {
-    component: require('./views/home')
-  }
+
+    '/': {
+        component: require('./views/home')
+    },
+
+    '/tim': {
+      component: require('./views/tim')
+    },
+
 })
 router.start(App, '#app')
