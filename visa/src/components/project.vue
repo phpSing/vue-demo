@@ -1,7 +1,7 @@
 <template>
 
     <li class="list-group-item project" :class="{active: projectData.active}">
-        <a href="#" v-text="projectData.title"></a>
+        <a href="#" v-text="projectData.name || projectData.title"></a>
     </li>
 
 </template>
@@ -18,19 +18,14 @@ export default {
 
     created() {
 
-        this.index == 1 && this.store.dispatch(this.store.actions.getSprints())
+        this.index == 1 && this.store.dispatch(this.store.actions.getSprints({
+
+            // projectId: this.projectData.projectId
+
+        }))
 
     },
 
-
-    data() {
-        // 默认数据
-        return {
-
-
-        }
-
-    }
 
 }
 </script>

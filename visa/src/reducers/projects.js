@@ -1,12 +1,20 @@
 const data =  {
+    newProject: '',
+    newSprint: '',
+    newApi: '',
+    newScene: '',
+
+    currentProjectId: '',
+    currentSprintId: '',
+    currentApiId: '',
+    currentSceneId: '',
+
+    alert: '暂无消息',
     // 首列
     projects : [
         {
-            projectId: 1,
-            project: '行程助手',
-            title: '行程助手',
-            owner: '朱毅',
-            active: false,
+            name: '行程助手',
+            active: false
         }
     ],
     // 第二列迭代
@@ -121,7 +129,6 @@ export default function todos(state = data, action) {
 
             projects: [
 
-                ...state.projects,
                 ...action.projects
 
             ]
@@ -136,12 +143,22 @@ export default function todos(state = data, action) {
 
           sprints: [
 
-              ...state.sprints,
               ...action.sprints
 
           ]
 
       }
+
+    case 'INSERT_PROJECT':
+
+        return {
+
+            ...state,
+
+            newProject: action.newProject,
+            alert: action.alert,
+
+        }
 
     default:
       return state
