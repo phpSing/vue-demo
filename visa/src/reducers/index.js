@@ -1,12 +1,6 @@
 import { combineReducers } from 'redux'
-import todos from './todos'
-import admin from './admin'
-import counter from './counter'
-import emails from './emails'
+import projects from './projects'
 
 export default combineReducers({
-  todos,
-  admin,
-  emails,
-  counter
+  projects,
 })

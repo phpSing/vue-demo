@@ -1,10 +1,8 @@
-import * as todos from './todos'
-import * as emails from './emails'
+import * as projects from './projects'
 import store from '../store'
 
 module.exports = {
 
-    ...todos,
-    ...emails,
+    ...projects,
 
 };

@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './app'
-
 Vue.use(VueRouter)
 
 const router = new VueRouter()
@@ -9,12 +8,8 @@ const router = new VueRouter()
 router.map({
 
     '/': {
-        component: require('./views/home')
-    },
-
-    '/tim': {
-      component: require('./views/tim')
-    },
+        component: require('./views/index')
+    }
 
 })
 router.start(App, '#app')
